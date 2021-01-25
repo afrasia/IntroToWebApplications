@@ -1,0 +1,42 @@
+﻿@model IntroToWebApps5.Core5.Models.Person
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Hello World!</h1>
+This is a test of the emergency broadcast system.
+<h3>Simple Web Form</h3>
+<form asp-controller="HelloWorld" asp-action="Index" method="post">
+    <table>
+        <tr>
+            <td>
+                First Name:
+            </td>
+            <td>
+                <input type="text" id="FirstName" name="FirstName" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name:
+            </td>
+            <td>
+                <input type="text" id="LastName" name="LastName" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit">Process</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<h3>Output of Web Form</h3>
+@if (Model != null)
+{
+    @(ViewData["Message"])
+    <br />
+    @(Model.FirstName + " " + Model.LastName)
+}
