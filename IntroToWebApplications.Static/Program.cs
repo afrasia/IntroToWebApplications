@@ -1,8 +1,22 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+namespace IntroToWebApplications.Static;
 
-app.UseDefaultFiles();
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-app.UseStaticFiles();
+        // Add services to the container.
+        builder.Services.AddControllersWithViews();
 
-app.Run();
+        var app = builder.Build();
+
+        app.UseDefaultFiles();
+
+        app.UseStaticFiles();
+
+        app.UseRouting();
+
+        app.Run();
+    }
+}
